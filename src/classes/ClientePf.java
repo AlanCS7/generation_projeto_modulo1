@@ -32,4 +32,16 @@ public class ClientePf extends Cliente {
 
 	}
 	
+	@Override
+	public String toString() {
+		return "\n-------------------DADOS CLIENTE PF-------------------"
+				+"\nNúmero da Conta: " + getNumConta()
+				+ "\nNome: " + getNome()
+				+ "\nEndereço: " + getEndereco()
+				+ "\nCpf: " + getCpf()
+				+ "\nSaldo: " + getSaldo()
+				+ "\n------------------------------------------------------\n";
+	}
+	
+	
 }
