@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 import classes.Cliente;
 import classes.ClientePf;
 import classes.ClientePj;
@@ -16,6 +18,8 @@ public class ClienteMain {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
+		
+		try {
 		ClientePf clientePf = new ClientePf();
 		ClientePj clientePj = new ClientePj();
 
@@ -203,7 +207,10 @@ public class ClienteMain {
 		for (Cliente cliente : clientes) {
 			System.out.println(cliente);
 		}
-
+		} catch(Exception e) {
+			System.out.println("DIGITE COM LETRAS MAIUSCULAS OU NÚMEROS CONFORME SOLICITADO.");
+		}
+		
 		sc.close();
 
 	}
