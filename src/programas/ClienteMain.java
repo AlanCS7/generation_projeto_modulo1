@@ -59,7 +59,7 @@ public class ClienteMain {
 				do {
 
 					System.out.println("Digite uma das opções abaixo: " + "\n1 - DEPOSITO" + "\n2 - SAQUE"
-							+ "\nO - SAIR DO PROGRAMA");
+							+ "\nO - SAIR DO MENU");
 					System.out.println();
 					System.out.print("OPÇÃO: ");
 					n = sc.nextInt();
@@ -105,7 +105,7 @@ public class ClienteMain {
 				do {
 
 					System.out.println("Digite uma das opções abaixo: " + "\n1 - DEPOSITO" + "\n2 - SAQUE"
-							+ "\nO - SAIR DO PROGRAMA");
+							+ "\nO - SAIR DO MENU");
 					System.out.println();
 					System.out.print("OPÇÃO: ");
 					n = sc.nextInt();
@@ -133,6 +133,73 @@ public class ClienteMain {
 
 		}
 
+		for (Cliente cliente : clientes) {
+			System.out.println(cliente);
+		}
+
+		int na = 0;
+		int np = 0;
+
+		do {
+			System.out.println("\n-------------------MENU DE OPÇÕES-------------------");
+			System.out.println("\n1 - REMOVER CLIENTE" + "\n2 - ATUALIZAR CLIENTE" + "\nO - SAIR DO PROGRAMA");
+			System.out.println();
+			System.out.print("OPÇÃO: ");
+			na = sc.nextInt();
+
+			if (na == 1) {
+
+				System.out.print("\nDigite número da conta do cliente que vai ser removido: ");
+				int nConta = sc.nextInt();
+
+				clientes.removeIf(x -> x.getNumConta() == nConta);
+
+			} else if (na == 2) {
+
+				System.out.print("\nDigite número da conta do cliente que vai ser atualizado: ");
+				int nConta = sc.nextInt();
+				do {
+					if (nConta == clientePf.getNumConta()) {
+						System.out.println("\nDigite uma das opções que deseja atualizar:" + "\n1 - NOME"
+								+ "\n2 - ENDEREÇO" + "\nO - SAIR DO MENU");
+						System.out.println();
+						System.out.print("OPÇÃO: ");
+						int op = sc.nextInt();
+						sc.nextLine();
+						if (op == 1) {
+							System.out.print("Digite o novo nome: ");
+							String nome = sc.nextLine();
+							clientePf.setNome(nome);
+						} else if (op == 2) {
+							System.out.print("Digite o novo endereço: ");
+							String endereco = sc.nextLine();
+							clientePf.setEndereco(endereco);
+						}
+
+					} else if (nConta == clientePj.getNumConta()) {
+						System.out.println("\nDigite uma das opções que deseja atualizar: " + "\n1 - NOME"
+								+ "\n2 - ENDEREÇO" + "\nO - SAIR DO MENU");
+						System.out.println();
+						System.out.print("OPÇÃO: ");
+						int op = sc.nextInt();
+						sc.nextLine();
+						if (op == 1) {
+							System.out.print("Digite o novo nome: ");
+							String nome = sc.nextLine();
+							clientePj.setNome(nome);
+						} else if (op == 2) {
+							System.out.print("Digite o novo endereço: ");
+							String endereco = sc.nextLine();
+							clientePj.setEndereco(endereco);
+						}
+					}
+				} while (np != 0);
+
+			}
+
+		} while (na != 0);
+
+		System.out.println("\n-------------------LISTA ATUALIZADA-------------------");
 		for (Cliente cliente : clientes) {
 			System.out.println(cliente);
 		}
