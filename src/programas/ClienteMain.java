@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
-import javax.swing.JOptionPane;
-
 import classes.Cliente;
 import classes.ClientePf;
 import classes.ClientePj;
@@ -38,7 +36,7 @@ public class ClienteMain {
 			System.out.print("Qual tipo de Cliente (F ou J)? ");
 			char cli = sc.next().charAt(0);
 
-			if (cli == 'F') {
+			if (cli == 'F' || cli == 'f') {
 
 				System.out.print("Digite o número da conta pessoa fisica: ");
 				int num = sc.nextInt();
@@ -85,7 +83,7 @@ public class ClienteMain {
 				System.out.print("\n------------------------------------------------------\n");
 				clientes.add(clientePf);
 
-			} else if (cli == 'J') {
+			} else if (cli == 'J' || cli == 'j') {
 
 				System.out.print("Digite o número da conta pessoa juridica: ");
 				int num = sc.nextInt();
